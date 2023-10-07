@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bevl4dcr624xi"]
+
+[ext_resource type="Texture2D" uid="uid://b5s1xgp50lcxq" path="res://Assets/pickaxe.svg" id="1_0ujkn"]
+[ext_resource type="Script" path="res://Scenes/pickaxe.gd" id="2_8h8da"]
+
+[sub_resource type="Animation" id="Animation_61652"]
+resource_name = "mining"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.174533, 0.349066, 0.523599, 0.698132, 0.872665, 1.0472, 1.22173, 1.39626]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, -0.5), Vector2(9.5, -1.5), Vector2(14, -4), Vector2(18, -5.5), Vector2(22, -9.5), Vector2(25, -12.5), Vector2(27, -17.5), Vector2(28, -22.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cgg16"]
+_data = {
+"mining": SubResource("Animation_61652")
+}
+
+[node name="Pickaxe" type="Sprite2D"]
+scale = Vector2(4.733, 5)
+texture = ExtResource("1_0ujkn")
+script = ExtResource("2_8h8da")
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cgg16")
+}

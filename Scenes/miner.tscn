@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://xvieyw2mbbkl"]
+
+[ext_resource type="PackedScene" uid="uid://bevl4dcr624xi" path="res://Scenes/pickaxe.tscn" id="1_r8ibg"]
+[ext_resource type="Script" path="res://Scenes/miner.gd" id="1_v4tu6"]
+
+[node name="Miner" type="Node2D"]
+script = ExtResource("1_v4tu6")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Actions" type="HBoxContainer" parent="."]
+offset_top = -109.0
+offset_right = 480.0
+offset_bottom = 2.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Start" type="Button" parent="Actions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Start"
+
+[node name="Stop" type="Button" parent="Actions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+text = "Stop"
+
+[node name="Pickaxe" parent="." instance=ExtResource("1_r8ibg")]
+position = Vector2(152, -335)
+
+[connection signal="pressed" from="Actions/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Actions/Stop" to="." method="_on_stop_pressed"]
