@@ -1,6 +1,6 @@
 # Minging Life
 
-This is fantastic game what developed on [godot engine](https://godotengine.org) for mobile devices.
+Fantastic game about mining every day what developed on [godot engine](https://godotengine.org) for mobile devices.
 
 ## Percentage of mining values:
 - 1 ~ 80%
